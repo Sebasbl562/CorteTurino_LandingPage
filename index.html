@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corte Taurino</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#b91c1c",
+                        crimson: "#8b0000",
+                        gold: "#c9a84c",
+                        dark: "#0a0a0a",
+                        charcoal: "#1a1a1a",
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'Georgia', 'serif'],
+                        body: ['Cormorant Garamond', 'Georgia', 'serif'],
+                        sans: ['Raleway', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body>
+
+<!-- ════════════════════════ WHATSAPP FLOAT ════════════════════════ -->
+<a id="whatsapp-btn" href="https://wa.me/TUNUMERO" target="_blank" title="Reserva por WhatsApp" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp text-white text-2xl"></i>
+</a>
+
+<!-- ════════════════════════ MOBILE MENU ════════════════════════ -->
+<div id="mobile-menu" role="dialog" aria-label="Menú de navegación">
+    <button id="mobile-close" class="absolute top-6 right-6 text-white text-3xl" aria-label="Cerrar menú">&times;</button>
+    <a href="#inicio"   class="nav-link text-xl" onclick="closeMobile()">Inicio</a>
+    <a href="#nosotros" class="nav-link text-xl" onclick="closeMobile()">Nosotros</a>
+    <a href="#vision"   class="nav-link text-xl" onclick="closeMobile()">Visión</a>
+    <a href="#carta"    class="nav-link text-xl" onclick="closeMobile()">Carta</a>
+    <a href="#contacto" class="nav-link text-xl" onclick="closeMobile()">Contacto</a>
+    <div class="flex gap-6 mt-4">
+        <a href="index.html" class="nav-link">ES</a>
+        <a href="en.html"    class="nav-link">EN</a>
+    </div>
+</div>
+
+<!-- ════════════════════════ NAVBAR ════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-400 py-4 px-6 transition-all" style="z-index:400; background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center gap-3">
+          <img src="img/logo_blanco2.png" alt="Corte Taurino" class="h-20">
+            <!-- Placeholder tipográfico mientras agregas el logo
+            <div class="flex flex-col leading-none">
+                <span style="font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:900; letter-spacing:0.06em; color:#fff;">CORTE</span>
+                <span style="font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:400; font-style:italic; color:var(--gold); letter-spacing:0.06em; margin-top:-4px;">Taurino</span>
+            </div>-->
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center gap-8">
+            <a href="#inicio"   class="nav-link">Inicio</a>
+            <a href="#nosotros" class="nav-link">Nosotros</a>
+            <a href="#vision"   class="nav-link">Visión</a>
+            <a href="#carta"    class="nav-link">Carta</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-5">
+            <a href="#contacto" style="font-family:'Raleway',sans-serif; font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; background:var(--primary); color:#fff; padding:0.5rem 1.2rem; transition:background 0.3s;" onmouseover="this.style.background='var(--crimson)'" onmouseout="this.style.background='var(--primary)'">Reservar</a>
+            <span style="width:1px;height:20px;background:rgba(255,255,255,0.2);display:inline-block;"></span>
+            <a href="index.html" class="nav-link">ES</a>
+            <a href="en.html"    class="nav-link">EN</a>
+        </div>
+
+        <!-- Hamburger -->
+        <button id="hamburger" class="md:hidden text-white text-2xl" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+<!-- ════════════════════════ HERO ════════════════════════ -->
+<section id="inicio">
+    <div id="hero" style="background: linear-gradient(160deg, #b91c1c 0%, #b91c1c 50%, #b91c1c 100%);">
+        <div id="hero-pattern"></div>
+        <div id="hero-bg"></div>
+
+        <!-- Decorative vertical lines -->
+        <div style="position:absolute;left:8%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(201,168,76,0.15),transparent);z-index:2;"></div>
+        <div style="position:absolute;right:8%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(201,168,76,0.15),transparent);z-index:2;"></div>
+
+        <div class="hero-content text-center px-6" style="max-width:780px;">
+            <p class="section-eyebrow mb-6 reveal">— Experiencia Gastronómica —</p>
+            <span class="gold-line mb-6 reveal"></span>
+
+            <h1 class="reveal" style="font-family:'Playfair Display',serif; font-size:clamp(3.5rem,9vw,7rem); font-weight:900; line-height:0.95; letter-spacing:-0.01em; color:#fff; margin-bottom:0.2em;">
+                CORTE<br><em style="color:var(--gold); font-style:italic; font-weight:400; font-size:0.65em; letter-spacing:0.06em;">Taurino</em>
+            </h1>
+
+            <span class="gold-line mt-6 mb-6 reveal"></span>
+
+            <p class="reveal" style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:300; font-style:italic; color:rgba(245,240,235,0.75); letter-spacing:0.05em; margin-bottom:2.5rem;">
+                Donde la carne se convierte en arte
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center reveal">
+                <a href="#carta" style="font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;background:var(--primary);color:#fff;padding:0.9rem 2.2rem;border:1px solid var(--primary);transition:all 0.3s;" onmouseover="this.style.background='transparent';this.style.color='var(--primary)'" onmouseout="this.style.background='var(--primary)';this.style.color='#fff'">
+                    Ver Carta
+                </a>
+                <a href="#contacto" style="font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;background:transparent;color:#fff;padding:0.9rem 2.2rem;border:1px solid rgba(255,255,255,0.3);transition:all 0.3s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='#fff'">
+                    Reservar Mesa
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div style="position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0.5;">
+            <span style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;">Scroll</span>
+            <div style="width:1px;height:50px;background:linear-gradient(180deg,var(--gold),transparent);animation:scrollAnim 2s infinite;"></div>
+        </div>
+        <style>@keyframes scrollAnim{0%{opacity:0;transform:scaleY(0);transform-origin:top}50%{opacity:1}100%{opacity:0;transform:scaleY(1);transform-origin:top}}</style>
+    </div>
+</section>
+
+<!-- ════════════════════════ NOSOTROS ════════════════════════ -->
+<section id="nosotros" style="padding:7rem 1.5rem; background: linear-gradient(180deg, #0a0a0a 0%, #110000 50%, #0a0a0a 100%);">
+    <div style="max-width:1100px; margin:0 auto;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;" class="flex-col-mobile">
+
+            <!-- Text -->
+            <div class="reveal">
+                <p class="section-eyebrow mb-4">Nuestra Historia</p>
+                <h2 class="section-title text-white mb-6">
+                    Pasión por<br><em style="color:var(--gold); font-style:italic;">la carne perfecta</em>
+                </h2>
+                <span class="gold-line-full mb-8" style="display:block;"></span>
+                <p style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:300; line-height:1.9; color:rgba(245,240,235,0.8); margin-bottom:1.5rem;">
+                    Corte Taurino nació de una obsesión: llevar a la mesa el mejor corte, preparado con respeto, fuego vivo y años de oficio. Cada pieza es seleccionada personalmente, madurada con paciencia y presentada con orgullo.
+                </p>
+                <p style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:300; line-height:1.9; color:rgba(245,240,235,0.65);">
+                    No servimos comida. Creamos experiencias que permanecen en la memoria mucho después de la última copa.
+                </p>
+                <div style="display:flex; gap:3rem; margin-top:3rem;">
+                    <div>
+                        <div style="font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:700; color:var(--primary);">12+</div>
+                        <div style="font-family:'Raleway',sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(245,240,235,0.5); margin-top:4px;">Años de experiencia</div>
+                    </div>
+                    <div style="width:1px; background:rgba(201,168,76,0.2);"></div>
+                    <div>
+                        <div style="font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:700; color:var(--primary);">30+</div>
+                        <div style="font-family:'Raleway',sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(245,240,235,0.5); margin-top:4px;">Cortes exclusivos</div>
+                    </div>
+                    <div style="width:1px; background:rgba(201,168,76,0.2);"></div>
+                    <div>
+                        <div style="font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:700; color:var(--primary);">★ 5</div>
+                        <div style="font-family:'Raleway',sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(245,240,235,0.5); margin-top:4px;">Calificación</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image placeholder -->
+            <div class="reveal frame-deco" style="aspect-ratio:4/5; background:linear-gradient(135deg,#1a0505,#2d0a0a); display:flex; align-items:center; justify-content:center; border:1px solid rgba(139,0,0,0.3);">
+                <!-- Reemplaza esto con: <img src="img/nosotros.jpg" alt="Nuestro restaurante" style="width:100%;height:100%;object-fit:cover;"> -->
+                <div style="text-align:center; opacity:0.3;">
+                    <i class="fas fa-image" style="font-size:3rem; color:var(--gold); display:block; margin-bottom:1rem;"></i>
+                    <p style="font-family:'Raleway',sans-serif; font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);">Tu foto aquí</p>
+                    <p style="font-family:'Raleway',sans-serif; font-size:0.6rem; color:rgba(255,255,255,0.4); margin-top:0.5rem;">img/nosotros.jpg</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════ VISIÓN ════════════════════════ -->
+<section id="vision" style="padding:7rem 1.5rem; background:#0a0a0a; position:relative; overflow:hidden;">
+    <!-- Background decoration -->
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(139,0,0,0.12) 0%, transparent 70%);pointer-events:none;"></div>
+
+    <div style="max-width:900px; margin:0 auto; text-align:center; position:relative; z-index:1;">
+        <p class="section-eyebrow mb-4 reveal">Nuestra Filosofía</p>
+        <h2 class="section-title text-white mb-8 reveal">
+            Una visión clara:<br><em style="color:var(--gold); font-style:italic;">la excelencia en cada corte</em>
+        </h2>
+        <span class="gold-line mb-10 reveal" style="display:block;"></span>
+
+        <p style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; font-style:italic; line-height:1.8; color:rgba(245,240,235,0.85); margin-bottom:4rem;" class="reveal">
+            "Creemos que una gran carne merece un gran escenario. Nuestro compromiso es con el producto, el productor y el comensal. Sin atajos, sin concesiones."
+        </p>
+
+        <!-- 3 pilares -->
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;" class="reveal">
+            <div style="padding:2.5rem 1.5rem; border:1px solid rgba(201,168,76,0.15); background:rgba(255,255,255,0.02); transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.15)'">
+                <div style="font-size:2rem; margin-bottom:1rem;">🥩</div>
+                <h3 style="font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--gold); margin-bottom:0.8rem;">Origen Premium</h3>
+                <p style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:rgba(245,240,235,0.65); line-height:1.7;">Carne seleccionada de los mejores productores, con trazabilidad completa desde el campo hasta tu plato.</p>
+            </div>
+            <div style="padding:2.5rem 1.5rem; border:1px solid rgba(201,168,76,0.15); background:rgba(185,28,28,0.05); transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.15)'">
+                <div style="font-size:2rem; margin-bottom:1rem;">🔥</div>
+                <h3 style="font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--gold); margin-bottom:0.8rem;">Fuego & Técnica</h3>
+                <p style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:rgba(245,240,235,0.65); line-height:1.7;">Nuestros chefs dominan el fuego para extraer lo mejor de cada pieza. La temperatura exacta, el punto perfecto.</p>
+            </div>
+            <div style="padding:2.5rem 1.5rem; border:1px solid rgba(201,168,76,0.15); background:rgba(255,255,255,0.02); transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.15)'">
+                <div style="font-size:2rem; margin-bottom:1rem;">🍷</div>
+                <h3 style="font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--gold); margin-bottom:0.8rem;">Experiencia Total</h3>
+                <p style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:rgba(245,240,235,0.65); line-height:1.7;">Ambiente, servicio y maridaje pensados para que cada visita sea una celebración irrepetible.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════ CARTA ════════════════════════ -->
+<section id="carta" style="padding:7rem 1.5rem; background:linear-gradient(180deg,#0a0a0a 0%,#0f0000 100%);">
+    <div style="max-width:1000px; margin:0 auto;">
+
+        <div style="text-align:center; margin-bottom:4rem;" class="reveal">
+            <p class="section-eyebrow mb-4">Lo mejor de la casa</p>
+            <h2 class="section-title text-white mb-4">
+                Nuestra <em style="color:var(--gold); font-style:italic;">Carta</em>
+            </h2>
+            <span class="gold-line" style="display:block; margin-bottom:1.5rem;"></span>
+            <p style="font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:rgba(245,240,235,0.6); font-style:italic;">Precios sujetos a cambio. Consulta disponibilidad estacional.</p>
+        </div>
+
+        <!-- Tabs -->
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin-bottom:3rem;" class="reveal">
+            <button class="menu-tab active" onclick="showMenu('cortes')">Cortes</button>
+            <button class="menu-tab" onclick="showMenu('criollos')">Criollos</button>
+            <button class="menu-tab" onclick="showMenu('entradas')">Entradas</button>
+            <button class="menu-tab" onclick="showMenu('ninos')">Menú Niños</button>
+            <button class="menu-tab" onclick="showMenu('bebidas')">Bebidas</button>
+            <button class="menu-tab" onclick="showMenu('postres')">Postres</button>
+        </div>
+
+        <!-- ── CORTES ── -->
+        <div id="menu-cortes" class="menu-section active" style="grid-template-columns:1fr;" class="reveal">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:rgba(245,240,235,0.5);text-align:center;margin-bottom:2rem;border-bottom:1px solid rgba(201,168,76,0.1);padding-bottom:1.5rem;">
+                Seleccionados y madurados. Punto de cocción a tu elección.
+            </p>
+
+            <!-- Ejemplo de plato — sigue este patrón para agregar más -->
+            <div class="dish-card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+                    <div style="flex:1;">
+                        <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.4rem;">
+                            <h3 style="font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:700; color:#fff;">Ribeye Angus 400g</h3>
+                            <span style="font-family:'Raleway',sans-serif;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;background:var(--primary);color:#fff;padding:2px 8px;">Estrella de la casa</span>
+                        </div>
+                        <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:rgba(245,240,235,0.6); font-style:italic; line-height:1.6;">
+                            Corte marmoleo BMS 6+, sellado en brasa de carbón, mantequilla de hierbas y flor de sal. Viene con una guarnición a elegir.
+                        </p>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="dish-price">$38.00</div>
+                        <div style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,240,235,0.3);margin-top:2px;">400 gr.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+                    <div style="flex:1;">
+                        <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:0.4rem;">
+                            <h3 style="font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:700; color:#fff;">Ribeye Angus 400g</h3>
+                            <span style="font-family:'Raleway',sans-serif;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;background:var(--primary);color:#fff;padding:2px 8px;">Estrella de la casa</span>
+                        </div>
+                        <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:rgba(245,240,235,0.6); font-style:italic; line-height:1.6;">
+                            Corte marmoleo BMS 6+, sellado en brasa de carbón, mantequilla de hierbas y flor de sal. Viene con una guarnición a elegir.
+                        </p>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="dish-price">$38.00</div>
+                        <div style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,240,235,0.3);margin-top:2px;">400 gr.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agrega más platos con el mismo bloque .dish-card -->
+        </div>
+
+        <!-- ── CRIOLLOS ── -->
+        <div id="menu-criollos" class="menu-section" style="grid-template-columns:1fr;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:rgba(245,240,235,0.5);text-align:center;margin-bottom:2rem;border-bottom:1px solid rgba(201,168,76,0.1);padding-bottom:1.5rem;">
+                Sabores de nuestra tierra, con técnica y alma.
+            </p>
+            <div class="dish-card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+                    <div style="flex:1;">
+                        <h3 style="font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:700; color:#fff; margin-bottom:0.4rem;">Lomo Saltado Taurino</h3>
+                        <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:rgba(245,240,235,0.6); font-style:italic; line-height:1.6;">
+                            Lomo fino salteado al wok con tomate, ají amarillo y cebolla morada. Servido con papas fritas y arroz blanco.
+                        </p>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="dish-price">$24.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── ENTRADAS ── -->
+        <div id="menu-entradas" class="menu-section" style="grid-template-columns:1fr;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:rgba(245,240,235,0.5);text-align:center;margin-bottom:2rem;border-bottom:1px solid rgba(201,168,76,0.1);padding-bottom:1.5rem;">
+                El preludio perfecto antes del corte principal.
+            </p>
+            <div class="dish-card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+                    <div style="flex:1;">
+                        <h3 style="font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:700; color:#fff; margin-bottom:0.4rem;">Tabla de Chorizos Artesanales</h3>
+                        <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:rgba(245,240,235,0.6); font-style:italic; line-height:1.6;">
+                            Chorizos de elaboración propia con especias secretas, acompañados de chimichurri de la casa y pan de campo tostado.
+                        </p>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="dish-price">$16.00</div>
+                        <div style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,240,235,0.3);margin-top:2px;">Para 2</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── NIÑOS ── -->
+        <div id="menu-ninos" class="menu-section" style="grid-template-columns:1fr;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:rgba(245,240,235,0.5);text-align:center;margin-bottom:2rem;border-bottom:1px solid rgba(201,168,76,0.1);padding-bottom:1.5rem;">
+                Pequeños comensales, grandes sabores.
+            </p>
+            <div class="dish-card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+                    <div style="flex:1;">
+                        <h3 style="font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:700; color:#fff; margin-bottom:0.4rem;">Mini Medallones + Papas</h3>
+                        <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:rgba(245,240,235,0.6); font-style:italic; line-height:1.6;">
+                            Dos medallones tiernos de lomo, papas fritas crujientes y ketchup casero. Incluye jugo natural o gaseosa pequeña.
+                        </p>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="dish-price">$14.00</div>
+                        <div style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,240,235,0.3);margin-top:2px;">Hasta 12 años</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── BEBIDAS ── -->
+        <div id="menu-bebidas" class="menu-section" style="grid-template-columns:1fr;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:rgba(245,240,235,0.5);text-align:center;margin-bottom:2rem;border-bottom:1px solid rgba(201,168,76,0.1);padding-bottom:1.5rem;">
+                El maridaje correcto eleva cada corte.
+            </p>
+            <div class="dish-card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+                    <div style="flex:1;">
+                        <h3 style="font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:700; color:#fff; margin-bottom:0.4rem;">Malbec de la Casa</h3>
+                        <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:rgba(245,240,235,0.6); font-style:italic; line-height:1.6;">
+                            Vino tinto Malbec selección del sommelier, con notas de ciruela, cedro y especias. El compañero ideal del Ribeye.
+                        </p>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="dish-price">$9.00</div>
+                        <div style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,240,235,0.3);margin-top:2px;">Copa</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── POSTRES ── -->
+        <div id="menu-postres" class="menu-section" style="grid-template-columns:1fr;">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:rgba(245,240,235,0.5);text-align:center;margin-bottom:2rem;border-bottom:1px solid rgba(201,168,76,0.1);padding-bottom:1.5rem;">
+                El cierre perfecto para una experiencia memorable.
+            </p>
+            <div class="dish-card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+                    <div style="flex:1;">
+                        <h3 style="font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:700; color:#fff; margin-bottom:0.4rem;">Volcán de Chocolate</h3>
+                        <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:rgba(245,240,235,0.6); font-style:italic; line-height:1.6;">
+                            Bizcocho de chocolate negro 70% con corazón fundente, helado de vainilla artesanal y reducción de frutos rojos.
+                        </p>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="dish-price">$11.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ════════════════════════ CONTACTO ════════════════════════ -->
+<section id="contacto" style="padding:7rem 1.5rem; background:#0a0a0a; position:relative;">
+    <div style="max-width:1100px; margin:0 auto;">
+
+        <div style="text-align:center; margin-bottom:5rem;" class="reveal">
+            <p class="section-eyebrow mb-4">Visítanos o escríbenos</p>
+            <h2 class="section-title text-white mb-4">
+                Encuentra tu <em style="color:var(--gold); font-style:italic;">Mesa</em>
+            </h2>
+            <span class="gold-line" style="display:block;"></span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;" class="reveal">
+
+            <!-- Info -->
+            <div>
+                <div style="margin-bottom:2.5rem;">
+                    <p class="section-eyebrow mb-3">Dirección</p>
+                    <p style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:rgba(245,240,235,0.8);">Av. Principal 123, Tu Ciudad</p>
+                </div>
+                <div style="width:100%;height:1px;background:rgba(201,168,76,0.15);margin-bottom:2.5rem;"></div>
+                <div style="margin-bottom:2.5rem;">
+                    <p class="section-eyebrow mb-3">Horarios</p>
+                    <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:rgba(245,240,235,0.8); line-height:1.9;">
+                        Lunes – Jueves: 12:00 – 22:00<br>
+                        Viernes – Sábado: 12:00 – 24:00<br>
+                        Domingo: 12:00 – 21:00
+                    </p>
+                </div>
+                <div style="width:100%;height:1px;background:rgba(201,168,76,0.15);margin-bottom:2.5rem;"></div>
+                <div style="margin-bottom:2.5rem;">
+                    <p class="section-eyebrow mb-3">Reservas & Contacto</p>
+                    <a href="tel:+51999999999" style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:rgba(245,240,235,0.8); display:block; margin-bottom:0.5rem; transition:color 0.3s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(245,240,235,0.8)'">
+                        <i class="fas fa-phone mr-2" style="color:var(--primary); font-size:0.9rem;"></i>+51 999 999 999
+                    </a>
+                    <a href="mailto:contacto@cortetaurino.com" style="font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:rgba(245,240,235,0.8); transition:color 0.3s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(245,240,235,0.8)'">
+                        <i class="fas fa-envelope mr-2" style="color:var(--primary); font-size:0.9rem;"></i>contacto@cortetaurino.com
+                    </a>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <p class="section-eyebrow mb-4">Síguenos</p>
+                    <div style="display:flex; gap:1rem;">
+                        <a href="https://facebook.com/TuPagina" target="_blank" style="width:44px;height:44px;border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;color:rgba(245,240,235,0.7);font-size:1.1rem;transition:all 0.3s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)';this.style.color='rgba(245,240,235,0.7)'" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/TuPagina" target="_blank" style="width:44px;height:44px;border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;color:rgba(245,240,235,0.7);font-size:1.1rem;transition:all 0.3s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)';this.style.color='rgba(245,240,235,0.7)'" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/TUNUMERO" target="_blank" style="width:44px;height:44px;border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;color:rgba(245,240,235,0.7);font-size:1.1rem;transition:all 0.3s;" onmouseover="this.style.borderColor='#25D366';this.style.color='#25D366'" onmouseout="this.style.borderColor='rgba(201,168,76,0.3)';this.style.color='rgba(245,240,235,0.7)'" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reserva rápida -->
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.2);padding:3rem;">
+                <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff;margin-bottom:0.5rem;">Reserva tu mesa</h3>
+                <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(245,240,235,0.5);font-style:italic;margin-bottom:2rem;">Te confirmamos en menos de 1 hora</p>
+
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+                    <input type="text" placeholder="Tu nombre completo" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#fff;padding:0.85rem 1rem;font-family:'Cormorant Garamond',serif;font-size:1.05rem;outline:none;transition:border-color 0.3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                    <input type="tel" placeholder="Teléfono / WhatsApp" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#fff;padding:0.85rem 1rem;font-family:'Cormorant Garamond',serif;font-size:1.05rem;outline:none;transition:border-color 0.3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                        <input type="date" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#888;padding:0.85rem 1rem;font-family:'Cormorant Garamond',serif;font-size:1.05rem;outline:none;transition:border-color 0.3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                        <select style="background:#1a0505;border:1px solid rgba(255,255,255,0.1);color:#888;padding:0.85rem 1rem;font-family:'Cormorant Garamond',serif;font-size:1.05rem;outline:none;transition:border-color 0.3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                            <option value="">Personas</option>
+                            <option>1 persona</option>
+                            <option>2 personas</option>
+                            <option>3-4 personas</option>
+                            <option>5-6 personas</option>
+                            <option>7+ personas</option>
+                        </select>
+                    </div>
+                    <textarea placeholder="Ocasión especial, alergias u observaciones..." rows="3" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#fff;padding:0.85rem 1rem;font-family:'Cormorant Garamond',serif;font-size:1.05rem;outline:none;resize:none;transition:border-color 0.3s;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+                    <button style="background:var(--primary);color:#fff;font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;padding:1rem;border:none;cursor:pointer;transition:background 0.3s;" onmouseover="this.style.background='var(--crimson)'" onmouseout="this.style.background='var(--primary)'">
+                        Solicitar Reserva
+                    </button>
+                    <p style="font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:rgba(245,240,235,0.35);text-align:center;font-style:italic;">También puedes llamarnos o escribirnos por WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════ FOOTER ════════════════════════ -->
+<footer style="background:#050505;border-top:1px solid rgba(201,168,76,0.15);padding:4rem 1.5rem 2rem;">
+    <div style="max-width:1100px;margin:0 auto;">
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;">
+
+            <!-- Brand -->
+            <div>
+                <div style="margin-bottom:1.5rem;">
+                    <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:#fff;line-height:1;">CORTE</div>
+                    <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:400;font-style:italic;color:var(--gold);line-height:1;">Taurino</div>
+                </div>
+                <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.5);line-height:1.8;font-style:italic;max-width:260px;">Donde la carne se convierte en arte. Una experiencia que va más allá del sabor.</p>
+            </div>
+
+            <!-- Secciones -->
+            <div>
+                <p style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;">Secciones</p>
+                <div style="display:flex;flex-direction:column;gap:0.7rem;">
+                    <a href="#inicio"   style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Inicio</a>
+                    <a href="#nosotros" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Nosotros</a>
+                    <a href="#vision"   style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Visión</a>
+                    <a href="#carta"    style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Carta</a>
+                    <a href="#contacto" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Contacto</a>
+                </div>
+            </div>
+
+            <!-- Carta rápida -->
+            <div>
+                <p style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;">Carta</p>
+                <div style="display:flex;flex-direction:column;gap:0.7rem;">
+                    <a href="#carta" onclick="showMenu('cortes')" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Cortes</a>
+                    <a href="#carta" onclick="showMenu('criollos')" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Criollos</a>
+                    <a href="#carta" onclick="showMenu('entradas')" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Entradas</a>
+                    <a href="#carta" onclick="showMenu('bebidas')" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Bebidas</a>
+                    <a href="#carta" onclick="showMenu('postres')" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Postres</a>
+                </div>
+            </div>
+
+            <!-- Contacto rápido -->
+            <div>
+                <p style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;">Contacto</p>
+                <div style="display:flex;flex-direction:column;gap:0.8rem;">
+                    <a href="https://wa.me/TUNUMERO" target="_blank" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);display:flex;align-items:center;gap:0.6rem;">
+                        <i class="fab fa-whatsapp" style="color:#25D366;"></i> WhatsApp
+                    </a>
+                    <a href="https://facebook.com/TuPagina" target="_blank" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);display:flex;align-items:center;gap:0.6rem;">
+                        <i class="fab fa-facebook-f" style="color:#1877F2;"></i> Facebook
+                    </a>
+                    <a href="https://instagram.com/TuPagina" target="_blank" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);display:flex;align-items:center;gap:0.6rem;">
+                        <i class="fab fa-instagram" style="color:#E4405F;"></i> Instagram
+                    </a>
+                    <a href="tel:+51999999999" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);display:flex;align-items:center;gap:0.6rem;">
+                        <i class="fas fa-phone" style="color:var(--primary);"></i> +51 999 999 999
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+            <p style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.12em;color:rgba(245,240,235,0.3);">
+                © 2025 Corte Taurino. Todos los derechos reservados.
+            </p>
+            <div style="display:flex;gap:1.5rem;">
+                <a href="index.html" style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,235,0.4);">ES</a>
+                <a href="en.html"    style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,235,0.4);">EN</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ════════════════════════ SCRIPTS ════════════════════════ -->
+<style>
+    @media (max-width:768px) {
+        .flex-col-mobile { grid-template-columns:1fr !important; gap:3rem !important; }
+        #contacto > div > div:last-child { grid-template-columns:1fr !important; }
+        footer > div > div:first-child { grid-template-columns:1fr 1fr !important; }
+    }
+    @media (max-width:500px) {
+        footer > div > div:first-child { grid-template-columns:1fr !important; }
+    }
+</style>
+
+<script>
+    // ── Navbar scroll effect ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ── Mobile menu ──
+    document.getElementById('hamburger').addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('mobile-close').addEventListener('click', closeMobile);
+    function closeMobile() {
+        document.getElementById('mobile-menu').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    // ── Menu tabs ──
+    function showMenu(id) {
+        document.querySelectorAll('.menu-section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('menu-' + id).classList.add('active');
+        event.target.classList.add('active');
+        document.getElementById('c  arta').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // ── Reveal on scroll ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── Stagger hero reveals on load ──
+    document.querySelectorAll('#hero .reveal').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), 300 + i * 180);
+    });
+</script>
+
+</body>
+</html>
