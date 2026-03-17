@@ -6,23 +6,7 @@
     <title>Corte Taurino</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#b91c1c", crimson: "#8b0000",
-                        gold: "#c9a84c", dark: "#0a0a0a", charcoal: "#1a1a1a",
-                    },
-                    fontFamily: {
-                        display: ['Playfair Display', 'Georgia', 'serif'],
-                        body: ['Cormorant Garamond', 'Georgia', 'serif'],
-                        sans: ['Raleway', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>@keyframes scrollAnim{0%{opacity:0;transform:scaleY(0);transform-origin:top}50%{opacity:1}100%{opacity:0;transform:scaleY(1);transform-origin:top}}</style>
@@ -40,7 +24,7 @@
     <a href="#inicio"   class="nav-link" style="font-size:1.1rem;" onclick="closeMobile()">Inicio</a>
     <a href="#nosotros" class="nav-link" style="font-size:1.1rem;" onclick="closeMobile()">Nosotros</a>
     <a href="#vision"   class="nav-link" style="font-size:1.1rem;" onclick="closeMobile()">Visión</a>
-    <a href="#carta"    class="nav-link" style="font-size:1.1rem;" onclick="closeMobile()">Carta</a>
+    <a href="/carta/index.html"    class="nav-link" style="font-size:1.1rem;" onclick="closeMobile()">Carta</a>
     <a href="#contacto" class="nav-link" style="font-size:1.1rem;" onclick="closeMobile()">Contacto</a>
     <div style="display:flex;gap:1.5rem;margin-top:0.5rem;">
         <a href="index.html" class="nav-link">ES</a>
@@ -58,7 +42,7 @@
             <a href="#inicio"   class="nav-link">Inicio</a>
             <a href="#nosotros" class="nav-link">Nosotros</a>
             <a href="#vision"   class="nav-link">Visión</a>
-            <a href="#carta"    class="nav-link">Carta</a>
+            <a href="/carta/index.html"    class="nav-link">Carta</a>
             <a href="#contacto" class="nav-link">Contacto</a>
         </div>
         <div class="hidden md:flex items-center gap-5">
@@ -92,7 +76,7 @@
                 Donde la carne se convierte en arte
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center reveal">
-                <a href="#carta" style="font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;background:var(--primary);color:#fff;padding:0.9rem 2.2rem;border:1px solid var(--primary);transition:all 0.3s;" onmouseover="this.style.background='transparent';this.style.color='var(--primary)'" onmouseout="this.style.background='var(--primary)';this.style.color='#fff'">Ver Carta</a>
+                <a href="/carta/index.html" style="font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;background:var(--primary);color:#fff;padding:0.9rem 2.2rem;border:1px solid var(--primary);transition:all 0.3s;" onmouseover="this.style.background='transparent';this.style.color='var(--primary)'" onmouseout="this.style.background='var(--primary)';this.style.color='#fff'">Ver Carta</a>
                 <a href="#contacto" style="font-family:'Raleway',sans-serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;background:transparent;color:#fff;padding:0.9rem 2.2rem;border:1px solid rgba(255,255,255,0.3);transition:all 0.3s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='#fff'">Reservar Mesa</a>
             </div>
         </div>
@@ -107,8 +91,16 @@
 <!-- ════════ NOSOTROS ════════ -->
 <section id="nosotros" style="padding:7rem 1.5rem;background:linear-gradient(180deg,#0a0a0a 0%,#110000 50%,#0a0a0a 100%);">
     <div style="max-width:1100px;margin:0 auto;">
-        <!-- clase nosotros-grid: responsive en styles.css -->
-        <div class="nosotros-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+
+        <!-- ══════ ENCABEZADO DE SECCIÓN ══════ -->
+        <div style="text-align:center;margin-bottom:5rem;" class="reveal">
+            <p class="section-eyebrow mb-4">Quiénes Somos</p>
+            <h2 class="section-title text-white mb-4">Nuestra Historia</h2>
+            <span class="gold-line" style="display:block;"></span>
+        </div>
+
+        <!-- ══════ BLOQUE 1: TEXTO + GALERÍA (igual que antes) ══════ -->
+        <div class="nosotros-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-bottom:7rem;">
 
             <div class="reveal">
                 <p class="section-eyebrow mb-4">Nuestra Historia</p>
@@ -133,29 +125,25 @@
                 </div>
             </div>
 
-            <!-- CARRUSEL GALERÍA -->
+            <!-- CARRUSEL GALERÍA (sin cambios) -->
             <div class="reveal">
                 <div class="frame-deco">
                     <div class="gallery-carousel" id="gallery">
                         <div class="gallery-track" id="gallery-track">
                             <div class="gallery-slide">
-                                <!-- <img src="img/gallery/restaurante.jpg" alt="Restaurante Corte Taurino"> -->
-                                <div class="slide-ph"><i class="fas fa-store"></i><span>img/gallery/restaurante.jpg</span></div>
+                                <img src="img/pruebanosotros4.png" alt="Restaurante Corte Taurino">
                                 <div class="gallery-caption">Nuestro restaurante en Grocio Prado, Chincha</div>
                             </div>
                             <div class="gallery-slide">
-                                <!-- <img src="img/gallery/cocina.jpg" alt="Nuestra cocina"> -->
-                                <div class="slide-ph"><i class="fas fa-fire-burner"></i><span>img/gallery/cocina.jpg</span></div>
+                                 <img src="img/pruebanosotros2.png" alt="Nuestra cocina">
                                 <div class="gallery-caption">Fuego y técnica en cada corte</div>
                             </div>
                             <div class="gallery-slide">
-                                <!-- <img src="img/gallery/equipo.jpg" alt="Nuestro equipo"> -->
-                                <div class="slide-ph"><i class="fas fa-users"></i><span>img/gallery/equipo.jpg</span></div>
+                                <img src="img/pruebanosotros1.png" alt="Nuestro equipo">
                                 <div class="gallery-caption">El equipo detrás de cada experiencia</div>
                             </div>
                             <div class="gallery-slide">
-                                <!-- <img src="img/gallery/salon.jpg" alt="Salón"> -->
-                                <div class="slide-ph"><i class="fas fa-chair"></i><span>img/gallery/salon.jpg</span></div>
+                                <img src="img/pruebanosotros3.png" alt="Salón">
                                 <div class="gallery-caption">Un ambiente diseñado para celebrar</div>
                             </div>
                         </div>
@@ -166,6 +154,162 @@
                 </div>
             </div>
         </div>
+
+        <!-- ══════ DIVISOR DORADO ══════ -->
+        <div style="width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.25) 30%,rgba(201,168,76,0.25) 70%,transparent);margin-bottom:7rem;"></div>
+
+        <!-- ══════ BLOQUE 2: EQUIPO / GERENTES ══════ -->
+        <div style="margin-bottom:7rem;">
+            <div style="text-align:center;margin-bottom:3.5rem;" class="reveal">
+                <p class="section-eyebrow mb-3">Las personas detrás del fuego</p>
+                <h3 class="section-title text-white">Nuestro Equipo</h3>
+            </div>
+
+            <!-- Carrusel de tarjetas de perfil — usa moveCarousel() igual que la carta -->
+            <div class="mc-shell reveal">
+                <button class="mc-btn prev" onclick="moveCarousel('mc-equipo',-1)" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+                <button class="mc-btn next" onclick="moveCarousel('mc-equipo', 1)" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+                <div class="menu-carousel-wrap">
+                    <div class="menu-carousel-track" id="mc-equipo">
+
+                        <!-- ══ TARJETA PERFIL — copia este bloque para añadir personas ══ -->
+                        <div class="team-card">
+                            <div class="team-avatar">
+                                 <img src="img/pruebaequipo1.png" alt="Carlos Mendoza">
+                                <!-- Insignia de rol -->
+                                <span class="team-badge">Gerente General</span>
+                            </div>
+                            <div class="team-body">
+                                <div class="team-name">Carlos Mendoza</div>
+                                <div class="team-role">Fundador & Director</div>
+                                <div class="team-divider"></div>
+                                <p class="team-quote">
+                                    "Desde niño supe que la carne era mi vocación. Cada corte que sale de esta cocina lleva veinte años de aprendizaje y una promesa: nunca vas a irte decepcionado."
+                                </p>
+                                <div class="team-footer">
+                                    <i class="fas fa-quote-left" style="color:var(--gold);opacity:0.4;font-size:0.75rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="team-card">
+                            <div class="team-avatar">
+                                <img src="img/pruebaequipo2.png" alt="Lucía Torres">
+                                <span class="team-badge">Administración</span>
+                            </div>
+                            <div class="team-body">
+                                <div class="team-name">Lucía Torres</div>
+                                <div class="team-role">Gerente de Operaciones</div>
+                                <div class="team-divider"></div>
+                                <p class="team-quote">
+                                    "Mi trabajo es que cada visita sea perfecta, desde que entras hasta que te vas. El detalle lo es todo: la mesa bien puesta, la atención cálida y el ambiente que te hace querer volver."
+                                </p>
+                                <div class="team-footer">
+                                    <i class="fas fa-quote-left" style="color:var(--gold);opacity:0.4;font-size:0.75rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="team-card">
+                            <div class="team-avatar">
+                                <img src="img/pruebaequipo3.png" alt="Miguel Quispe">
+
+                                <span class="team-badge">Cocina</span>
+                            </div>
+                            <div class="team-body">
+                                <div class="team-name">Miguel Quispe</div>
+                                <div class="team-role">Chef Ejecutivo</div>
+                                <div class="team-divider"></div>
+                                <p class="team-quote">
+                                    "El fuego no perdona la improvisación. Me levanto cada día pensando en cómo mejorar el punto del corte de ayer. La brasa es mi lenguaje y la carne es lo que tengo para decirte."
+                                </p>
+                                <div class="team-footer">
+                                    <i class="fas fa-quote-left" style="color:var(--gold);opacity:0.4;font-size:0.75rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Agrega más tarjetas con el mismo bloque .team-card -->
+
+                    </div>
+                </div>
+                <div class="mc-fade-r"></div>
+            </div>
+        </div>
+
+        <!-- ══════ DIVISOR DORADO ══════ -->
+        <div style="width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.25) 30%,rgba(201,168,76,0.25) 70%,transparent);margin-bottom:7rem;"></div>
+
+        <!-- ══════ BLOQUE 3: NUESTRAS ÁREAS ══════ -->
+        <div>
+            <div style="text-align:center;margin-bottom:3.5rem;" class="reveal">
+                <p class="section-eyebrow mb-3">Espacios pensados para ti</p>
+                <h3 class="section-title text-white">Nuestras Áreas</h3>
+            </div>
+
+            <!-- Carrusel de fotos cuadradas — usa un segundo gallery (IDs: areas-*) -->
+            <div class="reveal">
+                <div class="areas-carousel-wrap">
+                    <div class="areas-track" id="areas-track">
+
+                        <!-- ══ FOTO ÁREA — copia este bloque para añadir áreas ══ -->
+                        <div class="area-card">
+                            <div class="area-img">
+                                <img src="img/pruebaarea1.png" alt="Área verde">
+                                <!--<div class="area-img-ph"><i class="fas fa-leaf"></i></div> -->
+                            </div>
+                            <div class="area-label">
+                                <span class="area-name">Área Verde</span>
+                                <span class="area-desc">Jardín al aire libre, ideal para almuerzos familiares y eventos especiales bajo la sombra.</span>
+                            </div>
+                        </div>
+
+                        <div class="area-card">
+                            <div class="area-img">
+                                 <img src="img/pruebaarea2.png" alt="Salón principal">
+                                <!--<div class="area-img-ph"><i class="fas fa-utensils"></i></div>-->
+                            </div>
+                            <div class="area-label">
+                                <span class="area-name">Salón Principal</span>
+                                <span class="area-desc">Ambiente climatizado con decoración rústica y elegante, perfecto para cenas románticas o de negocios.</span>
+                            </div>
+                        </div>
+
+                        <div class="area-card">
+                            <div class="area-img">
+                                 <img src="img/pruebaarea3.png" alt="Zona de parrilla">
+                               <!-- <div class="area-img-ph"><i class="fas fa-fire"></i></div>-->
+                            </div>
+                            <div class="area-label">
+                                <span class="area-name">Zona de Parrilla</span>
+                                <span class="area-desc">Disfruta el espectáculo de la brasa desde tu mesa. El aroma y el fuego como parte de la experiencia.</span>
+                            </div>
+                        </div>
+
+                        <div class="area-card">
+                            <div class="area-img">
+                                 <img src="img/pruebaarea4.png" alt="Sala privada">
+                                <!-- <div class="area-img-ph"><i class="fas fa-glass-cheers"></i></div>-->
+                             </div>
+                             <div class="area-label">
+                                 <span class="area-name">Sala Privada</span>
+                                 <span class="area-desc">Espacio exclusivo para celebraciones y reuniones corporativas con servicio personalizado.</span>
+                             </div>
+                         </div>
+
+                         <!-- Agrega más áreas con el mismo bloque .area-card -->
+
+                    </div>
+
+                    <button class="areas-btn prev" id="areas-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+                    <button class="areas-btn next" id="areas-next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <!-- Dots de áreas -->
+                <div class="gallery-dots" id="areas-dots" style="margin-top:1.2rem;"></div>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -200,227 +344,105 @@
     </div>
 </section>
 
-<!-- ════════ CARTA ════════ -->
+
 <section id="carta" style="padding:7rem 1.5rem;background:linear-gradient(180deg,#0a0a0a 0%,#0f0000 100%);">
     <div style="max-width:1100px;margin:0 auto;">
 
+        <!-- Encabezado -->
         <div style="text-align:center;margin-bottom:4rem;" class="reveal">
-            <p class="section-eyebrow mb-4">Lo mejor de la casa</p>
-            <h2 class="section-title text-white mb-4">Nuestra Carta</h2>
+            <p class="section-eyebrow mb-4">Selección especial</p>
+            <h2 class="section-title text-white mb-4">Platos del Chef</h2>
             <span class="gold-line" style="display:block;margin-bottom:1.5rem;"></span>
-            <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:rgba(245,240,235,0.6);font-style:italic;">Precios sujetos a cambio. Consulta disponibilidad estacional.</p>
-        </div>
-
-        <!-- Tabs — clase tabs-wrap para scroll horizontal en móvil -->
-        <div class="tabs-wrap reveal" style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-bottom:2.5rem;">
-            <button class="menu-tab active" onclick="showMenu('cortes',this)">Cortes</button>
-            <button class="menu-tab" onclick="showMenu('criollos',this)">Criollos</button>
-            <button class="menu-tab" onclick="showMenu('entradas',this)">Entradas</button>
-            <button class="menu-tab" onclick="showMenu('ninos',this)">Menú Niños</button>
-            <button class="menu-tab" onclick="showMenu('bebidas',this)">Bebidas</button>
-            <button class="menu-tab" onclick="showMenu('postres',this)">Postres</button>
-        </div>
-
-        <!--
-            ESTRUCTURA CORRECTA DE CADA SECCIÓN:
-            .menu-section
-              <p subtítulo>
-              .mc-shell                ← padding lateral = zona de botones
-                .mc-btn.prev           ← left:2px (dentro del padding)
-                .mc-btn.next           ← right:2px
-                .menu-carousel-wrap    ← overflow:hidden (el clip)
-                  .menu-carousel-track ← flex que se traslada
-                    .dish-card-c × N
-                .mc-fade-r             ← degradado derecho decorativo
-        -->
-
-        <!-- ── CORTES ── -->
-        <div id="menu-cortes" class="menu-section active reveal">
-            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(245,240,235,0.45);text-align:center;margin-bottom:1.8rem;">
-                Seleccionados y madurados. Punto de cocción a tu elección.
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:rgba(245,240,235,0.6);font-style:italic;">
+                Los cortes y creaciones que definen nuestra cocina
             </p>
-            <div class="mc-shell">
-                <button class="mc-btn prev" onclick="moveCarousel('mc-cortes',-1)" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-                <button class="mc-btn next" onclick="moveCarousel('mc-cortes', 1)" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-                <div class="menu-carousel-wrap">
-                    <div class="menu-carousel-track" id="mc-cortes">
-
-                        <!-- ══ TARJETA — copia este bloque para añadir platos ══ -->
-                        <div class="dish-card-c">
-                            <div class="dish-img">
-                                <!-- <img src="img/platos/ribeye.jpg" alt="Ribeye Angus"> -->
-                                <div class="dish-ph"><i class="fas fa-drumstick-bite"></i><span>ribeye.jpg</span></div>
-                                <span class="dish-badge-img">Estrella de la casa</span>
-                            </div>
-                            <div class="dish-body">
-                                <div class="dish-name-c">Ribeye Angus 400g</div>
-                                <p class="dish-desc-c">Corte marmoleo BMS 6+, sellado en brasa de carbón, mantequilla de hierbas y flor de sal. Con guarnición a elegir.</p>
-                                <div class="dish-footer-c"><span class="dish-price-c">$38.00</span><span class="dish-weight-c">400 gr.</span></div>
-                            </div>
-                        </div>
-
-                        <div class="dish-card-c">
-                            <div class="dish-img"><div class="dish-ph"><i class="fas fa-drumstick-bite"></i><span>ribeye2.jpg</span></div></div>
-                            <div class="dish-body">
-                                <div class="dish-name-c">Ribeye Angus 400g</div>
-                                <p class="dish-desc-c">Corte marmoleo BMS 6+, sellado en brasa de carbón, mantequilla de hierbas y flor de sal. Con guarnición a elegir.</p>
-                                <div class="dish-footer-c"><span class="dish-price-c">$38.00</span><span class="dish-weight-c">400 gr.</span></div>
-                            </div>
-                        </div>
-                        <div class="dish-card-c">
-                            <div class="dish-img"><div class="dish-ph"><i class="fas fa-drumstick-bite"></i><span>ribeye2.jpg</span></div></div>
-                            <div class="dish-body">
-                                <div class="dish-name-c">Ribeye Angus 400g</div>
-                                <p class="dish-desc-c">Corte marmoleo BMS 6+, sellado en brasa de carbón, mantequilla de hierbas y flor de sal. Con guarnición a elegir.</p>
-                                <div class="dish-footer-c"><span class="dish-price-c">$38.00</span><span class="dish-weight-c">400 gr.</span></div>
-                            </div>
-                        </div>
-                        <div class="dish-card-c">
-                            <div class="dish-img"><div class="dish-ph"><i class="fas fa-drumstick-bite"></i><span>ribeye2.jpg</span></div></div>
-                            <div class="dish-body">
-                                <div class="dish-name-c">Ribeye Angus 400g</div>
-                                <p class="dish-desc-c">Corte marmoleo BMS 6+, sellado en brasa de carbón, mantequilla de hierbas y flor de sal. Con guarnición a elegir.</p>
-                                <div class="dish-footer-c"><span class="dish-price-c">$38.00</span><span class="dish-weight-c">400 gr.</span></div>
-                            </div>
-                        </div>
-                        <div class="dish-card-c">
-                            <div class="dish-img"><div class="dish-ph"><i class="fas fa-drumstick-bite"></i><span>ribeye2.jpg</span></div></div>
-                            <div class="dish-body">
-                                <div class="dish-name-c">Ribeye Angus 400g</div>
-                                <p class="dish-desc-c">Corte marmoleo BMS 6+, sellado en brasa de carbón, mantequilla de hierbas y flor de sal. Con guarnición a elegir.</p>
-                                <div class="dish-footer-c"><span class="dish-price-c">$38.00</span><span class="dish-weight-c">400 gr.</span></div>
-                            </div>
-                        </div>
-                        <div class="dish-card-c">
-                            <div class="dish-img"><div class="dish-ph"><i class="fas fa-drumstick-bite"></i><span>ribeye2.jpg</span></div></div>
-                            <div class="dish-body">
-                                <div class="dish-name-c">Ribeye Angus 400g</div>
-                                <p class="dish-desc-c">Corte marmoleo BMS 6+, sellado en brasa de carbón, mantequilla de hierbas y flor de sal. Con guarnición a elegir.</p>
-                                <div class="dish-footer-c"><span class="dish-price-c">$38.00</span><span class="dish-weight-c">400 gr.</span></div>
-                            </div>
-                        </div>
-                        <div class="dish-card-c">
-                            <div class="dish-img"><div class="dish-ph"><i class="fas fa-drumstick-bite"></i><span>ribeye2.jpg</span></div></div>
-                            <div class="dish-body">
-                                <div class="dish-name-c">Ribeye Angus 400g</div>
-                                <p class="dish-desc-c">Corte marmoleo BMS 6+, sellado en brasa de carbón, mantequilla de hierbas y flor de sal. Con guarnición a elegir.</p>
-                                <div class="dish-footer-c"><span class="dish-price-c">$38.00</span><span class="dish-weight-c">400 gr.</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mc-fade-r"></div>
-            </div>
         </div>
 
-        <!-- ── CRIOLLOS ── -->
-        <div id="menu-criollos" class="menu-section">
-            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(245,240,235,0.45);text-align:center;margin-bottom:1.8rem;">Sabores de nuestra tierra, con técnica y alma.</p>
-            <div class="mc-shell">
-                <button class="mc-btn prev" onclick="moveCarousel('mc-criollos',-1)"><i class="fas fa-chevron-left"></i></button>
-                <button class="mc-btn next" onclick="moveCarousel('mc-criollos', 1)"><i class="fas fa-chevron-right"></i></button>
-                <div class="menu-carousel-wrap">
-                    <div class="menu-carousel-track" id="mc-criollos">
-                        <div class="dish-card-c">
-                            <div class="dish-img"><div class="dish-ph"><i class="fas fa-utensils"></i><span>lomo_saltado.jpg</span></div></div>
-                            <div class="dish-body">
-                                <div class="dish-name-c">Lomo Saltado Taurino</div>
-                                <p class="dish-desc-c">Lomo fino salteado al wok con tomate, ají amarillo y cebolla morada. Con papas fritas y arroz blanco.</p>
-                                <div class="dish-footer-c"><span class="dish-price-c">$24.00</span></div>
-                            </div>
+        <!-- Carrusel horizontal de platos estrella -->
+        <div class="mc-shell reveal" style="margin-bottom:3.5rem;">
+            <button class="mc-btn prev" onclick="moveCarousel('mc-chef',-1)" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+            <button class="mc-btn next" onclick="moveCarousel('mc-chef', 1)"  aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+            <div class="menu-carousel-wrap">
+                <div class="menu-carousel-track" id="mc-chef">
+
+                    <!-- ══ TARJETA PLATO DEL CHEF
+                         Estructura: foto izquierda | nombre + badge derecha
+                         Para agregar foto: reemplaza <div class="chef-ph"> con
+                           <img src="img/platos/nombre.jpg" alt="Nombre plato">
+                         Copia todo el bloque .chef-card para añadir más platos
+                    ══ -->
+
+                    <div class="chef-card">
+                        <div class="chef-thumb">
+                            <img src="img/pruebaplato4.png" alt="Ribeye Angus">
+                            <span class="chef-cat-badge">Cortes</span>
+                        </div>
+                        <div class="chef-info">
+                            <span class="chef-star"><i class="fas fa-star"></i> Estrella de la casa</span>
+                            <div class="chef-name">Ribeye Angus 400g</div>
                         </div>
                     </div>
+
+                    <div class="chef-card">
+                        <div class="chef-thumb">
+                            <img src="img/pruebaplato1.png" alt="Lomo Saltado Taurino">
+                            <span class="chef-cat-badge">Criollos</span>
+                        </div>
+                        <div class="chef-info">
+                            <span class="chef-star"><i class="fas fa-star"></i> Favorito de la casa</span>
+                            <div class="chef-name">Lomo Saltado Taurino</div>
+                        </div>
+                    </div>
+
+                    <div class="chef-card">
+                        <div class="chef-thumb">
+                            <<img src="img/pruebaplato2.png" alt="Tabla de Chorizos">
+                            <span class="chef-cat-badge">Entradas</span>
+                        </div>
+                        <div class="chef-info">
+                            <span class="chef-star"><i class="fas fa-star"></i> Para compartir</span>
+                            <div class="chef-name">Tabla de Chorizos Artesanales</div>
+                        </div>
+                    </div>
+
+                    <div class="chef-card">
+                        <div class="chef-thumb">
+                             <img src="img/pruebaplato3.png" alt="Volcán de Chocolate">
+                            <span class="chef-cat-badge">Postres</span>
+                        </div>
+                        <div class="chef-info">
+                            <span class="chef-star"><i class="fas fa-star"></i> No te lo pierdas</span>
+                            <div class="chef-name">Volcán de Chocolate</div>
+                        </div>
+                    </div>
+
+                    <div class="chef-card">
+                        <div class="chef-thumb">
+                            <img src="img/pruebaplato4.png" alt="Malbec de la Casa">
+                            <span class="chef-cat-badge">Bebidas</span>
+                        </div>
+                        <div class="chef-info">
+                            <span class="chef-star"><i class="fas fa-star"></i> Maridaje ideal</span>
+                            <div class="chef-name">Malbec de la Casa</div>
+                        </div>
+                    </div>
+
+                    <!-- Agrega más tarjetas copiando el bloque .chef-card -->
+
                 </div>
-                <div class="mc-fade-r"></div>
             </div>
+            <div class="mc-fade-r"></div>
         </div>
 
-        <!-- ── ENTRADAS ── -->
-        <div id="menu-entradas" class="menu-section">
-            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(245,240,235,0.45);text-align:center;margin-bottom:1.8rem;">El preludio perfecto antes del corte principal.</p>
-            <div class="mc-shell">
-                <button class="mc-btn prev" onclick="moveCarousel('mc-entradas',-1)"><i class="fas fa-chevron-left"></i></button>
-                <button class="mc-btn next" onclick="moveCarousel('mc-entradas', 1)"><i class="fas fa-chevron-right"></i></button>
-                <div class="menu-carousel-wrap">
-                    <div class="menu-carousel-track" id="mc-entradas">
-                        <div class="dish-card-c">
-                            <div class="dish-img"><div class="dish-ph"><i class="fas fa-utensils"></i><span>chorizos.jpg</span></div></div>
-                            <div class="dish-body">
-                                <div class="dish-name-c">Tabla de Chorizos Artesanales</div>
-                                <p class="dish-desc-c">Chorizos de elaboración propia, chimichurri de la casa y pan de campo tostado.</p>
-                                <div class="dish-footer-c"><span class="dish-price-c">$16.00</span><span class="dish-weight-c">Para 2</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mc-fade-r"></div>
-            </div>
-        </div>
-
-        <!-- ── NIÑOS ── -->
-        <div id="menu-ninos" class="menu-section">
-            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(245,240,235,0.45);text-align:center;margin-bottom:1.8rem;">Pequeños comensales, grandes sabores.</p>
-            <div class="mc-shell">
-                <button class="mc-btn prev" onclick="moveCarousel('mc-ninos',-1)"><i class="fas fa-chevron-left"></i></button>
-                <button class="mc-btn next" onclick="moveCarousel('mc-ninos', 1)"><i class="fas fa-chevron-right"></i></button>
-                <div class="menu-carousel-wrap">
-                    <div class="menu-carousel-track" id="mc-ninos">
-                        <div class="dish-card-c">
-                            <div class="dish-img"><div class="dish-ph"><i class="fas fa-utensils"></i><span>medallones.jpg</span></div></div>
-                            <div class="dish-body">
-                                <div class="dish-name-c">Mini Medallones + Papas</div>
-                                <p class="dish-desc-c">Dos medallones tiernos de lomo, papas fritas crujientes y ketchup casero. Incluye jugo natural o gaseosa pequeña.</p>
-                                <div class="dish-footer-c"><span class="dish-price-c">$14.00</span><span class="dish-weight-c">Hasta 12 años</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mc-fade-r"></div>
-            </div>
-        </div>
-
-        <!-- ── BEBIDAS ── -->
-        <div id="menu-bebidas" class="menu-section">
-            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(245,240,235,0.45);text-align:center;margin-bottom:1.8rem;">El maridaje correcto eleva cada corte.</p>
-            <div class="mc-shell">
-                <button class="mc-btn prev" onclick="moveCarousel('mc-bebidas',-1)"><i class="fas fa-chevron-left"></i></button>
-                <button class="mc-btn next" onclick="moveCarousel('mc-bebidas', 1)"><i class="fas fa-chevron-right"></i></button>
-                <div class="menu-carousel-wrap">
-                    <div class="menu-carousel-track" id="mc-bebidas">
-                        <div class="dish-card-c">
-                            <div class="dish-img"><div class="dish-ph"><i class="fas fa-wine-glass-alt"></i><span>malbec.jpg</span></div></div>
-                            <div class="dish-body">
-                                <div class="dish-name-c">Malbec de la Casa</div>
-                                <p class="dish-desc-c">Vino tinto Malbec, notas de ciruela, cedro y especias. El compañero ideal del Ribeye.</p>
-                                <div class="dish-footer-c"><span class="dish-price-c">$9.00</span><span class="dish-weight-c">Copa</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mc-fade-r"></div>
-            </div>
-        </div>
-
-        <!-- ── POSTRES ── -->
-        <div id="menu-postres" class="menu-section">
-            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(245,240,235,0.45);text-align:center;margin-bottom:1.8rem;">El cierre perfecto para una experiencia memorable.</p>
-            <div class="mc-shell">
-                <button class="mc-btn prev" onclick="moveCarousel('mc-postres',-1)"><i class="fas fa-chevron-left"></i></button>
-                <button class="mc-btn next" onclick="moveCarousel('mc-postres', 1)"><i class="fas fa-chevron-right"></i></button>
-                <div class="menu-carousel-wrap">
-                    <div class="menu-carousel-track" id="mc-postres">
-                        <div class="dish-card-c">
-                            <div class="dish-img"><div class="dish-ph"><i class="fas fa-ice-cream"></i><span>volcan.jpg</span></div></div>
-                            <div class="dish-body">
-                                <div class="dish-name-c">Volcán de Chocolate</div>
-                                <p class="dish-desc-c">Bizcocho de chocolate negro 70% con corazón fundente, helado de vainilla artesanal y reducción de frutos rojos.</p>
-                                <div class="dish-footer-c"><span class="dish-price-c">$11.00</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mc-fade-r"></div>
-            </div>
+        <!-- Botón Ver Carta completa -->
+        <div style="text-align:center;" class="reveal">
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.45);font-style:italic;margin-bottom:1.5rem;">
+                ¿Quieres explorar todo lo que tenemos para ti?
+            </p>
+            <a href="carta/" class="btn-carta-full">
+                <span>Ver Carta Completa</span>
+                <i class="fas fa-arrow-right" style="font-size:0.75rem;margin-left:0.6rem;"></i>
+            </a>
         </div>
 
     </div>
@@ -508,18 +530,18 @@
                     <a href="#inicio"   style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Inicio</a>
                     <a href="#nosotros" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Nosotros</a>
                     <a href="#vision"   style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Visión</a>
-                    <a href="#carta"    style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Carta</a>
+                    <a href="/carta/index.html"    style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Carta</a>
                     <a href="#contacto" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Contacto</a>
                 </div>
             </div>
             <div>
                 <p style="font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;">Carta</p>
                 <div style="display:flex;flex-direction:column;gap:0.7rem;">
-                    <a href="#carta" onclick="showMenu('cortes',null)"   style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Cortes</a>
-                    <a href="#carta" onclick="showMenu('criollos',null)" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Criollos</a>
-                    <a href="#carta" onclick="showMenu('entradas',null)" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Entradas</a>
-                    <a href="#carta" onclick="showMenu('bebidas',null)"  style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Bebidas</a>
-                    <a href="#carta" onclick="showMenu('postres',null)"  style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Postres</a>
+                    <a href="/carta/index.html" onclick="showMenu('cortes',null)"   style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Cortes</a>
+                    <a href="/carta/index.html" onclick="showMenu('criollos',null)" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Criollos</a>
+                    <a href="/carta/index.html" onclick="showMenu('entradas',null)" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Entradas</a>
+                    <a href="/carta/index.html" onclick="showMenu('bebidas',null)"  style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Bebidas</a>
+                    <a href="/carta/index.html" onclick="showMenu('postres',null)"  style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,240,235,0.6);">Postres</a>
                 </div>
             </div>
             <div>
@@ -542,131 +564,7 @@
     </div>
 </footer>
 
-<!-- ════════ SCRIPTS ════════ -->
-<script>
-    /* ── Navbar ── */
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
 
-    /* ── Mobile menu ── */
-    document.getElementById('hamburger').addEventListener('click', () => {
-        document.getElementById('mobile-menu').classList.add('open');
-        document.body.style.overflow = 'hidden';
-    });
-    document.getElementById('mobile-close').addEventListener('click', closeMobile);
-    function closeMobile() {
-        document.getElementById('mobile-menu').classList.remove('open');
-        document.body.style.overflow = '';
-    }
-
-    /* ── Reveal on scroll ── */
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => entry.target.classList.add('visible'), i * 80);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    document.querySelectorAll('#hero .reveal').forEach((el, i) => {
-        setTimeout(() => el.classList.add('visible'), 300 + i * 180);
-    });
-
-    /* ── Tabs ── */
-    function showMenu(id, btn) {
-        document.querySelectorAll('.menu-section').forEach(s => s.classList.remove('active'));
-        document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('menu-' + id).classList.add('active');
-        if (btn) btn.classList.add('active');
-        // reset posición del carrusel al cambiar tab
-        const track = document.getElementById('mc-' + id);
-        if (track) { track.style.transform = 'translateX(0)'; mcPos['mc-' + id] = 0; }
-    }
-
-    /* ── Carrusel carta ──
-       Los botones viven en .mc-shell (padding:0 44px).
-       El clip real es .menu-carousel-wrap (overflow:hidden).
-       El track se traslada con translateX.
-    */
-    const mcPos = {};
-
-    function moveCarousel(trackId, dir) {
-        const track = document.getElementById(trackId);
-        if (!track) return;
-        const cards = track.querySelectorAll('.dish-card-c');
-        if (!cards.length) return;
-
-        // gap real del track
-        const gap   = parseFloat(getComputedStyle(track).columnGap) || 20;
-        const cardW = cards[0].offsetWidth + gap;
-        const wrapW = track.parentElement.offsetWidth;          // .menu-carousel-wrap
-        const vis   = Math.max(1, Math.floor(wrapW / cardW));
-        const maxIdx = Math.max(0, cards.length - vis);
-
-        mcPos[trackId] = mcPos[trackId] || 0;
-        mcPos[trackId] = Math.min(Math.max(mcPos[trackId] + dir, 0), maxIdx);
-        track.style.transform = `translateX(-${mcPos[trackId] * cardW}px)`;
-
-        // estado disabled de los botones (hermanos en .mc-shell)
-        const shell = track.closest('.mc-shell');
-        if (shell) {
-            shell.querySelector('.mc-btn.prev').disabled = (mcPos[trackId] === 0);
-            shell.querySelector('.mc-btn.next').disabled = (mcPos[trackId] >= maxIdx);
-        }
-    }
-
-    /* Touch swipe en carruseles de carta */
-    document.querySelectorAll('.menu-carousel-track').forEach(track => {
-        let sx = 0;
-        track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
-        track.addEventListener('touchend',   e => {
-            const dx = e.changedTouches[0].clientX - sx;
-            if (Math.abs(dx) > 35) moveCarousel(track.id, dx < 0 ? 1 : -1);
-        });
-    });
-
-    /* Inicializar: deshabilitar todos los "prev" al cargar */
-    window.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.mc-shell .mc-btn.prev').forEach(btn => btn.disabled = true);
-    });
-
-    /* ── Carrusel galería Nosotros ── */
-    (function () {
-        const track  = document.getElementById('gallery-track');
-        const slides = track.querySelectorAll('.gallery-slide');
-        const dotsEl = document.getElementById('gallery-dots');
-        let cur = 0, timer;
-
-        slides.forEach((_, i) => {
-            const d = document.createElement('div');
-            d.className = 'gallery-dot' + (i === 0 ? ' active' : '');
-            d.addEventListener('click', () => goTo(i));
-            dotsEl.appendChild(d);
-        });
-
-        function goTo(idx) {
-            dotsEl.children[cur].classList.remove('active');
-            cur = (idx + slides.length) % slides.length;
-            track.style.transform = `translateX(-${cur * 100}%)`;
-            dotsEl.children[cur].classList.add('active');
-            clearInterval(timer);
-            timer = setInterval(() => goTo(cur + 1), 4500);
-        }
-
-        document.getElementById('gallery-prev').addEventListener('click', () => goTo(cur - 1));
-        document.getElementById('gallery-next').addEventListener('click', () => goTo(cur + 1));
-
-        let sx = 0;
-        track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
-        track.addEventListener('touchend',   e => {
-            const dx = e.changedTouches[0].clientX - sx;
-            if (Math.abs(dx) > 40) goTo(dx < 0 ? cur + 1 : cur - 1);
-        });
-
-        timer = setInterval(() => goTo(cur + 1), 4500);
-    })();
-</script>
-
+<script src="script/scripts.js" ></script>
 </body>
 </html>
